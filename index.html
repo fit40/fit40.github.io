@@ -412,6 +412,106 @@
     section{padding:68px 0}
     .btn{width:100%}
   }
+
+  /* =========================================================
+     VERSÃO CELULAR (até 640px). Não afeta o computador.
+     ========================================================= */
+  .only-m{display:none}
+  @media(max-width:640px){
+    .hide-m{display:none!important}
+    .only-m{display:block}
+    section{padding:52px 0}
+
+    /* tudo centralizado, mesmo ritmo em todas as seções */
+    .center,.hero-grid>div:first-child,.origin-grid>div,.results-text,.about-grid>div:last-child,.final,.offer-card{text-align:center}
+    .lead{font-size:.95rem;line-height:1.6;margin-left:auto;margin-right:auto}
+    h2,.results-text h2,.final h2{font-size:1.55rem;line-height:1.18;margin:10px 0 12px;text-wrap:balance}
+    .eyebrow{font-size:.72rem}
+    .btn-row{justify-content:center;gap:12px;margin-top:24px}
+    .micro{justify-content:center}
+    .lead{text-wrap:balance}
+    .btn{font-size:.86rem;padding:17px 16px;letter-spacing:.01em;white-space:nowrap}
+    .btn svg{width:18px;height:18px}
+
+    /* hero */
+    .hero{padding-bottom:56px}
+    .hero .btn-row{flex-direction:column}
+
+    /* identificação: lista compacta */
+    .pain-grid{gap:10px;margin-top:26px}
+    .pain-grid .pain{flex-basis:100%;padding:14px 16px;gap:12px;border-radius:14px;align-items:center;text-align:left}
+    .pain .x{width:26px;height:26px;font-size:.78rem}
+    .pain p{font-size:.9rem;line-height:1.45}
+    .turn{margin-top:26px;padding:22px 18px;font-size:1.02rem;line-height:1.45}
+
+    /* origem: só os títulos dos 3 objetivos */
+    .origin-grid{gap:26px}
+    .goals{gap:10px}
+    .goal{padding:14px 16px;gap:14px;text-align:left;border-radius:14px}
+    .goal .ic{width:44px;height:44px;border-radius:12px}
+    .goal .ic svg{width:22px;height:22px}
+    .goal h3{font-size:1rem}
+    .goal p{display:none}
+
+    /* pilares: carrossel deslizante */
+    .pillars{
+      display:flex;gap:14px;margin:26px -20px 0;padding:4px 20px 14px;
+      overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding:0 20px;
+      -webkit-overflow-scrolling:touch;scrollbar-width:none;
+    }
+    .pillars::-webkit-scrollbar{display:none}
+    .pillar,.pillar:nth-child(4),.pillar:nth-child(5){
+      grid-column:auto;flex:0 0 78%;scroll-snap-align:start;padding:24px 20px;text-align:left;
+    }
+    .pillars .pillar.reveal{opacity:1;transform:none}
+    .pillar .ic{width:50px;height:50px;border-radius:14px;margin-bottom:14px}
+    .pillar .ic svg{width:26px;height:26px}
+    .pillar h3{font-size:1.1rem}
+    .pillar p{font-size:.88rem;line-height:1.5}
+    .pillar .num{font-size:3.8rem}
+    .swipe-hint{text-align:center;font-size:.78rem;color:var(--muted);margin-top:2px;letter-spacing:.02em}
+
+    /* resultados */
+    .results-grid{gap:26px}
+    .results-img{max-width:none}
+    .check-list{gap:8px;margin-top:18px;text-align:left}
+    .check-list li{font-size:.9rem;gap:10px;align-items:center;background:rgba(255,255,255,.08);padding:11px 14px;border-radius:12px}
+    .check-list li svg{width:20px;height:20px;margin-top:0}
+
+    /* para quem é */
+    .fit-grid{gap:14px;margin-top:26px}
+    .fit-card{padding:22px 20px;text-align:left}
+    .fit-card h3{font-size:1.05rem;margin-bottom:14px}
+    .fit-card li{font-size:.9rem}
+
+    /* sobre */
+    .about-grid{gap:30px}
+    .about-photo{max-width:210px}
+    .about-photo .tag{font-size:.7rem;padding:8px 14px}
+
+    /* oferta */
+    .offer-card{margin-top:28px;padding:34px 20px 24px;border-radius:22px}
+    .offer-card img{max-width:190px;margin:4px auto 16px}
+    .offer-list{gap:10px;margin-bottom:22px;font-size:.9rem;text-align:left}
+    .offer-card{padding-left:16px;padding-right:16px}
+    .offer-card .btn{font-size:.86rem;padding:18px 12px}
+    .offer-card .btn-ghost{font-size:.78rem;padding:15px 10px}
+    .secure{gap:8px 14px;font-size:.74rem}
+
+    /* faq */
+    .faq{margin-top:24px;gap:10px}
+    .faq summary{padding:16px 18px;font-size:.93rem}
+    .faq .ans{padding:0 18px 18px;font-size:.9rem}
+
+    .wa-float{width:54px;height:54px;right:14px;bottom:14px}
+    .wa-float svg{width:28px;height:28px}
+    footer{padding:28px 0 96px}
+  }
+  /* celulares bem pequenos: texto do botão pode quebrar */
+  @media(max-width:370px){
+    .btn{white-space:normal;line-height:1.3}
+    .offer-card .btn,.offer-card .btn-ghost{font-size:.8rem}
+  }
 </style>
 </head>
 <body>
@@ -451,7 +551,7 @@
     <div class="wrap hero-grid">
       <div class="reveal">
         <h1>Conheça o método <span class="h1-last h1-l2">que vai <em>mudar</em> a</span> <span class="h1-l3"><span class="h1-last">sua vida</span> <span class="h1-nw">depois dos 40.</span></span></h1>
-        <p class="lead">O <strong style="color:#fff">Método Fit 40+</strong> nasceu de mais de 10 anos treinando mulheres com mais de 40 anos, para gerar resultado de verdade, elevar sua autoestima e devolver o seu bem-estar.</p>
+        <p class="lead">O <strong style="color:#fff">Método Fit 40+</strong> nasceu de mais de 10 anos treinando mulheres com mais de 40 anos<span class="hide-m">, para gerar resultado de verdade, elevar sua autoestima e devolver o seu bem-estar</span>.</p>
         <div class="btn-row">
           <a class="btn btn-main pulse" data-cta="checkout" href="https://pay.hotmart.com/J98372799P" target="_blank" rel="noopener">
             Quero o Fit 40+
@@ -492,13 +592,13 @@
       <div class="center reveal">
         <span class="eyebrow">Você se identifica?</span>
         <h2>Depois dos 40, o corpo muda.<br><span class="hl">O treino também precisa mudar.</span></h2>
-        <p class="lead">Se você já sentiu alguma dessas coisas, saiba que não é falta de esforço. É falta de um método pensado para o seu momento.</p>
+        <p class="lead hide-m">Se você já sentiu alguma dessas coisas, saiba que não é falta de esforço. É falta de um método pensado para o seu momento.</p>
       </div>
       <div class="pain-grid">
         <div class="pain reveal"><span class="x">✕</span><p>Treina, se esforça, mas o resultado no espelho não aparece.</p></div>
         <div class="pain reveal"><span class="x">✕</span><p>Sente o corpo travado, com dores e menos disposição no dia a dia.</p></div>
-        <div class="pain reveal"><span class="x">✕</span><p>A gordura parece se concentrar na barriga e nas costas.</p></div>
-        <div class="pain reveal"><span class="x">✕</span><p>Faz treinos genéricos que não respeitam a fase da sua vida.</p></div>
+        <div class="pain reveal hide-m"><span class="x">✕</span><p>A gordura parece se concentrar na barriga e nas costas.</p></div>
+        <div class="pain reveal hide-m"><span class="x">✕</span><p>Faz treinos genéricos que não respeitam a fase da sua vida.</p></div>
         <div class="pain reveal"><span class="x">✕</span><p>A autoestima já não é a mesma e falta motivação para continuar.</p></div>
         <div class="pain reveal"><span class="x">✕</span><p>Já tentou de tudo e sente que “depois dos 40 não tem mais jeito”.</p></div>
       </div>
@@ -511,8 +611,8 @@
     <div class="wrap origin-grid">
       <div class="reveal">
         <span class="eyebrow">Como o método nasceu</span>
-        <h2>Esse método surgiu da minha experiência de <span class="hl">mais de 10 anos</span> treinando mulheres com mais de 40 anos.</h2>
-        <p class="lead">Ao longo desses anos, vi de perto o que funciona (e o que não funciona) para o corpo da mulher depois dos 40. O Fit 40+ reúne tudo isso em um caminho claro, seguro e eficiente.</p>
+        <h2>Esse método surgiu <span class="hide-m">da minha experiência </span>de <span class="hl">mais de 10 anos</span> treinando mulheres com mais de 40 anos.</h2>
+        <p class="lead hide-m">Ao longo desses anos, vi de perto o que funciona (e o que não funciona) para o corpo da mulher depois dos 40. O Fit 40+ reúne tudo isso em um caminho claro, seguro e eficiente.</p>
       </div>
       <div class="reveal">
         <p style="font-weight:600;margin-bottom:16px">Surgiu também da necessidade de:</p>
@@ -540,7 +640,7 @@
       <div class="center reveal">
         <span class="eyebrow">A base do método</span>
         <h2>O Método Fit 40+ possui <span class="hl-p">5 pilares</span></h2>
-        <p class="lead">Cada pilar tem uma função. Juntos, eles formam um treino completo para o corpo da mulher acima dos 40.</p>
+        <p class="lead hide-m">Cada pilar tem uma função. Juntos, eles formam um treino completo para o corpo da mulher acima dos 40.</p>
       </div>
       <div class="pillars">
         <article class="pillar reveal">
@@ -574,6 +674,7 @@
           <p>Cardio estratégico, sem horas na esteira: queima de gordura e saúde do coração no tempo que você tem.</p>
         </article>
       </div>
+      <p class="swipe-hint only-m">Deslize para ver os 5 pilares &rarr;</p>
       <div class="center reveal" style="margin-top:44px">
         <a class="btn btn-main" data-cta="checkout" href="https://pay.hotmart.com/J98372799P" target="_blank" rel="noopener">Quero treinar com os 5 pilares</a>
       </div>
@@ -589,7 +690,7 @@
       <div class="results-text reveal">
         <span class="eyebrow">Resultados reais</span>
         <h2>Todos esses pilares se completam e formam um <span class="hl">método poderoso</span>.</h2>
-        <p class="lead">Um método para ajudar mulheres acima dos 40 a atingirem a sua <strong style="color:#fff">melhor versão</strong>.</p>
+        <p class="lead hide-m">Um método para ajudar mulheres acima dos 40 a atingirem a sua <strong style="color:#fff">melhor versão</strong>.</p>
         <ul class="check-list">
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Corpo mais firme e definido</li>
           <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Mais energia e disposição</li>
@@ -614,7 +715,7 @@
           <ul>
             <li>Você tem 40 anos ou mais e quer se sentir bem no próprio corpo.</li>
             <li>Quer resultados sem treinos exaustivos ou arriscados.</li>
-            <li>Busca um método com começo, meio e direção.</li>
+            <li class="hide-m">Busca um método com começo, meio e direção.</li>
             <li>Quer recuperar sua autoestima e disposição.</li>
           </ul>
         </div>
@@ -638,11 +739,11 @@
         <span class="tag">Criador do Fit 40+</span>
       </div>
       <div class="reveal">
-        <img class="about-logo blend" src="assets/logo-igor.jpg" alt="Igor Silveira Personal Trainer">
+        <img class="about-logo blend hide-m" src="assets/logo-igor.jpg" alt="Igor Silveira Personal Trainer">
         <span class="eyebrow p">Quem vai te guiar</span>
         <h2>Prazer, eu sou o <span class="hl-p">Igor Silveira</span>.</h2>
         <p class="lead">Sou personal trainer e há mais de 10 anos me dedico a treinar mulheres com mais de 40 anos.</p>
-        <p class="lead">Foi dessa vivência, acompanhando de perto as dificuldades, os medos e as conquistas das minhas alunas, que nasceu o Método Fit 40+. Meu objetivo é simples: ajudar você a gerar resultados, melhorar sua autoestima e viver com mais bem-estar.</p>
+        <p class="lead hide-m">Foi dessa vivência, acompanhando de perto as dificuldades, os medos e as conquistas das minhas alunas, que nasceu o Método Fit 40+. Meu objetivo é simples: ajudar você a gerar resultados, melhorar sua autoestima e viver com mais bem-estar.</p>
         <div class="btn-row">
           <a class="btn btn-ghost" data-cta="whatsapp" href="https://wa.me/5551997447036?text=Ol%C3%A1%20Igor!%20Quero%20saber%20mais%20sobre%20o%20M%C3%A9todo%20Fit%2040%2B%20%F0%9F%92%AA" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20.5l1.6-5.2A8.5 8.5 0 1 1 21 11.5z"/></svg>
@@ -659,7 +760,7 @@
       <div class="center reveal">
         <span class="eyebrow">Comece hoje</span>
         <h2>Sua melhor versão começa <span class="hl">agora</span>.</h2>
-        <p class="lead">Não perde tempo: garanta seu acesso ao Método Fit 40+ e comece a mudar sua vida.</p>
+        <p class="lead hide-m">Não perde tempo: garanta seu acesso ao Método Fit 40+ e comece a mudar sua vida.</p>
       </div>
       <div class="offer-card reveal">
         <span class="ribbon">Método Fit 40+</span>
@@ -715,7 +816,7 @@
     <div class="wrap reveal">
       <span class="eyebrow">Sua hora é agora</span>
       <h2>Não perde tempo e comece hoje a <span class="hl">mudar sua vida</span> com o Fit 40+! 💪</h2>
-      <p class="lead" style="margin:0 auto">A idade não é limite. Com o método certo, os 40+ podem ser a sua melhor fase.</p>
+      <p class="lead hide-m" style="margin:0 auto">A idade não é limite. Com o método certo, os 40+ podem ser a sua melhor fase.</p>
       <div class="btn-row">
         <a class="btn btn-main pulse" data-cta="checkout" href="https://pay.hotmart.com/J98372799P" target="_blank" rel="noopener">Quero o Método Fit 40+</a>
         <a class="btn btn-ghost" data-cta="whatsapp" href="https://wa.me/5551997447036?text=Ol%C3%A1%20Igor!%20Quero%20saber%20mais%20sobre%20o%20M%C3%A9todo%20Fit%2040%2B%20%F0%9F%92%AA" target="_blank" rel="noopener">Falar no WhatsApp</a>
